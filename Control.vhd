@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Control is
     port (
-        Opcode	: in  STD_LOGIC_VECTOR(5 downto 0); -- Κωδικός λειτουργίας εντολής
+        Opcode	: in  STD_LOGIC_VECTOR(5 downto 0);
 		ALUop	: out STD_LOGIC_VECTOR(1 downto 0);
 		Clock	: in STD_LOGIC;
         RegDst,ALUSrc,MemtoReg,RegWrite	: out STD_LOGIC;

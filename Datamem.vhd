@@ -18,7 +18,7 @@ architecture Behavioral of Datamem is
     signal memory : mem_array := (others => (others => '0'));
 
 begin
-    -- Διαβάζουμε μόνο όταν MemRead = '1'
+    -- Read only when MemRead = '1'
     process (Clock)
     begin
         if rising_edge(Clock) then

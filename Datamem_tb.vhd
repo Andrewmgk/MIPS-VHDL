@@ -36,7 +36,7 @@ begin
 
     stimulus: process
     begin
-        -- Εγγραφή του 9 στη θέση μνήμης 2
+        -- Write 9 in memory 2
         Address   <= x"00000008";
         WriteData <= x"00000009";  
         MemWrite  <= '1';       
@@ -46,7 +46,7 @@ begin
         Clock     <= '0';
         wait for 10 ns;
 
-        -- Εγγραφή του 4 στη θέση μνήμης 3
+        -- Write 4 in memory 3
         Address   <= x"0000000C"; 
         WriteData <= x"00000004";
         MemWrite  <= '1';
@@ -56,7 +56,7 @@ begin
         Clock     <= '0';
         wait for 10 ns;
 
-        -- Ανάγνωση της θέσης μνήμης 2
+        -- Read memory 2
         Address   <= x"00000008";  
         MemWrite  <= '0';  
         MemRead   <= '1';  

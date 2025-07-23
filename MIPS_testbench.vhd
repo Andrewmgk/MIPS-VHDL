@@ -13,7 +13,6 @@ architecture Behavioral of MIPS_tb is
 		);
 	end component;
 	
-    -- Σήματα δοκιμής
     signal Clock   : STD_LOGIC := '0';
     signal Reset   : STD_LOGIC := '1';
 

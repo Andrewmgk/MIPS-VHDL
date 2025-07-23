@@ -5,10 +5,10 @@ use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 entity ALU is
     port (
-        A         : in  STD_LOGIC_VECTOR(31 downto 0); -- Πρώτος τελεστής
-        B         : in  STD_LOGIC_VECTOR(31 downto 0); -- Δεύτερος τελεστής
-        ALUop	  : in  STD_LOGIC_VECTOR(3 downto 0);  -- Κωδικός λειτουργίας ALU
-        Result    : out STD_LOGIC_VECTOR(31 downto 0); -- Αποτέλεσμα πράξης
+        A         : in  STD_LOGIC_VECTOR(31 downto 0);
+        B         : in  STD_LOGIC_VECTOR(31 downto 0);
+        ALUop	  : in  STD_LOGIC_VECTOR(3 downto 0);
+        Result    : out STD_LOGIC_VECTOR(31 downto 0);
         Zero      : out STD_LOGIC                      
     );
 end entity ALU;
@@ -45,7 +45,7 @@ begin
 
         Result <= temp_result;
 
-        if temp_result = X"00000000" then  -- Έλεγχος μηδενισμού
+        if temp_result = X"00000000" then  --Check if zero
             Zero <= '1';
         else
             Zero <= '0';

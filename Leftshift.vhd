@@ -5,7 +5,7 @@ use IEEE.NUMERIC_STD.ALL;
 entity Leftshift is
     port (
         Input32  : in  STD_LOGIC_VECTOR(31 downto 0); 
-        Output32 : out STD_LOGIC_VECTOR(31 downto 0)  -- μετατόπιση αριστερά κατά 2
+        Output32 : out STD_LOGIC_VECTOR(31 downto 0)
     );
 end entity Leftshift;
 

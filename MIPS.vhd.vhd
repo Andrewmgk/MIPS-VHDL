@@ -110,12 +110,12 @@ architecture Behavioral of MIPS is
         );
     end component;
     
-    --component LeftShift
-        --port (
-            --Input32  : in  STD_LOGIC_VECTOR(31 downto 0);
-            --Output32 : out STD_LOGIC_VECTOR(31 downto 0)
-        --);
-    --end component;
+    component LeftShift
+        port (
+            Input32  : in  STD_LOGIC_VECTOR(31 downto 0);
+            Output32 : out STD_LOGIC_VECTOR(31 downto 0)
+        );
+    end component;
     
     component Adder32
         port (
@@ -124,10 +124,8 @@ architecture Behavioral of MIPS is
             Sum : out STD_LOGIC_VECTOR(31 downto 0)
         );
     end component;
-	    
-    -- Σήματα σύνδεσης
-	
-	-- Αυξηση κατα 1
+	    	
+	-- Increase by 1
 	signal one : std_logic_vector(31 downto 0) := (others => '0');
 	
     -- PC signals
@@ -168,8 +166,8 @@ architecture Behavioral of MIPS is
     -- Mux 32-bit for selecting writeback data (MemtoReg selection)
     signal MuxMemtoRegOut : STD_LOGIC_VECTOR(31 downto 0);
 
-    -- LeftShift δεν χρειάζεται 
-    ---signal ShiftImm : STD_LOGIC_VECTOR(31 downto 0);
+    -- LeftShift 
+    signal ShiftImm : STD_LOGIC_VECTOR(31 downto 0);
 	
 begin
     
@@ -273,12 +271,12 @@ begin
 		   Clock   => Clock,
            ReadData  => DataMemOut
        );
-    -- LeftShift calculate instruction's offset (we dont use it here)
-    --LeftShiftInst: Leftshift
-       --port map (
-           --Input32  => SignImm,
-           --Output32 => ShiftImm
-       --);
+    -- LeftShift calculate instruction's offset (we dont use it with the default Instruction memory)
+    LeftShiftInst: Leftshift
+       port map (
+           Input32  => SignImm,
+           Output32 => ShiftImm
+       );
 
     -- Sign Extension
     SignExtInst: SignExtension

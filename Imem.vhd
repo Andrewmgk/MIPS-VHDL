@@ -4,7 +4,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 entity Imem is
     port (
-        Address    : in  STD_LOGIC_VECTOR(3 downto 0);  -- 4-bit για 16 θέσεις
+        Address    : in  STD_LOGIC_VECTOR(3 downto 0);  -- 4-bit for 16 location
         Instruction : out STD_LOGIC_VECTOR(31 downto 0)
     );
 end entity Imem;
@@ -20,7 +20,7 @@ architecture Behavioral of Imem is
         5 => x"20630001",  -- addi $3, $3, 1
         6 => x"20840001",  -- addi $4, $4, 1
         7 => x"20A5FFFF",  -- addi $5, $5, -1
-        8 => x"14A0FFFC",  -- bne $5, $0, L1 (πηγαίνει στη διεύθυνση 4)
+        8 => x"14A0FFFC",  -- bne $5, $0, L1 (go to 4)
         others => (others => '0')
     );
 begin

@@ -6,8 +6,8 @@ entity PC is
     port (
         Clock   : in  STD_LOGIC;                     
         Reset   : in  STD_LOGIC;                     
-        PC_in   : in  STD_LOGIC_VECTOR(31 downto 0); -- Νέα διεύθυνση
-        PC_out  : out STD_LOGIC_VECTOR(31 downto 0)  -- Τρέχουσα διεύθυνση
+        PC_in   : in  STD_LOGIC_VECTOR(31 downto 0);
+        PC_out  : out STD_LOGIC_VECTOR(31 downto 0) 
     );
 end entity PC;
 
@@ -21,7 +21,7 @@ begin
             PC_reg <= (others => '0');
         elsif rising_edge(Clock) then
             PC_reg <= std_logic_vector(unsigned(PC_reg) + 1); 
-			-- Αύξηση κατά 1 αντί για 4
+			-- Increase by one instead of 4
         end if;
     end process;
 
