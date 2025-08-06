@@ -26,7 +26,7 @@ A simplified MIPS CPU implementation in VHDL
 	
  ## How to run
  -Open the VHDL program in a simulation tool like Modelsim  
- -Load the VHDL files(the testbench can be skipped)  
+ -Load the VHDL files (the testbench can be skipped)  
  -Compile the Design  
  -Load the MIPS testbench  
  -Add all signals  
